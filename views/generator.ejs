@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/generator.css">
   <title>Check-in Generator</title>
-  <script src="https://unpkg.com/totp-generator@0.0.13/index.js" defer></script>
+  <script src="js/jsOTP.js" defer></script>
   <script src="https://unpkg.com/qrcode-generator" defer></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -17,7 +17,7 @@
   </div>
   <div class="block">
     <p>Scan the QR code to get a pass</p>
-    <div class="qr-holder">
+    <div id="holder" class="qr-holder">
       <img src="https://www.scandit.com/wp-content/uploads/2019/08/Symbology-QR-code.svg" alt="">
     </div>
     <div id="bar"></div>
