@@ -38,7 +38,7 @@ body {
 
 #bar {
     width: 100%;
-    transition: linear 1s;
+    transition: linear .2s;
     height: 2em;
     background-color: rgb(232, 84, 84);
     position: absolute;

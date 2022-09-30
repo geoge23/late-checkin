@@ -18,9 +18,9 @@
     <div>
       <% if (valid) { %>
         <p class="small">Checked in at</p>
-        <p class="bigger">8:50 am</p>
+        <p class="bigger"><%- date.timeString %></p>
         <p class="small">on</p>
-        <p class="small">December 12, 2022</p> 
+        <p class="small"><%- date.dateString %></p> 
       <% } else { %> 
         <p class="small" style="margin-bottom: .2em;">Check-in code is invalid</p>
         <p>Please scan the code again from the front office</p>
