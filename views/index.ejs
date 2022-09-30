@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Check-in</title>
+</head>
+<body>
+  <header>
+    <div>
+      <p class="head">Check-in Pass</p>
+      <p class="sub">From the <img class="shadow" src="https://wadaily.co/logo.png" height="18" width="18" style="margin-left: 5px"> WADaily Team</p>
+    </div>
+  </header>
+  <main>
+    <div>
+      <% if (valid) { %>
+        <p class="small">Checked in at</p>
+        <p class="bigger">8:50 am</p>
+        <p class="small">on</p>
+        <p class="small">December 12, 2022</p> 
+      <% } else { %> 
+        <p class="small" style="margin-bottom: .2em;">Check-in code is invalid</p>
+        <p>Please scan the code again from the front office</p>
+      <% } %> 
+    </div>
+  </main>
+  <div class="bottom">
+    <p>This screen serves as your late pass, show it to your teacher</p>
+    <% if (valid) { %>
+      <div class="rainbow">This pass is valid</div>
+    <% } %>
+  </div>
+</body>
+</html>
