@@ -2,19 +2,19 @@ var express = require('express');
 var router = express.Router();
 const crypto = require('crypto');
 const { TOTP } = require('otpauth');
-const SECRET = 'LEMGUTJJNNDAIBJ7'
+const SECRET = process.env.SECRET
 
 const totp = new TOTP({
   algorithm: 'SHA1',
-	digits: 6,
-	period: 10,
+	digits: 8,
+	period: process.env.PERIOD || 10,
 	secret: SECRET
 });
 
 router.get('/', function(req, res) {
   if (req.query.code && totp.validate({
     token: req.query.code,
-    window: 0
+    window: 1
   }) != null) {
     // If the user has a valid code, set a cookie for the day and show
     // them their late pass

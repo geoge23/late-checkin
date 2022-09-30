@@ -1,11 +1,12 @@
 const loadBar = document.getElementById('bar');
 const qrHolder = document.getElementById('holder');
-const SECRET = 'LEMGUTJJNNDAIBJ7';
+const SECRET = document.head.getAttribute('secret')
+const PERIOD = document.head.getAttribute('period')
 
 const totp = new OTPAuth.TOTP({
     algorithm: 'SHA1',
-    digits: 6,
-    period: 10,
+    digits: 8,
+    period: PERIOD,
     secret: SECRET
 });
 
@@ -15,7 +16,6 @@ const periodInMS = totp.period * 1000;
 const interval = setInterval(() => {
     if (timeStep != getTimeStep()) {
         const code = totp.generate();
-        console.log(code)
         makeQR(code);
         timeStep = getTimeStep()
     }
@@ -24,7 +24,7 @@ const interval = setInterval(() => {
 
 function makeQR(code) {
     const qr = qrcode(4, 'M');
-    qr.addData(`https://localhost:3000/?code=${code}`);
+    qr.addData(`https://${window.location.host}/?code=${code}`);
     qr.make();
     qrHolder.innerHTML = qr.createImgTag();
 }
