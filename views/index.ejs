@@ -14,6 +14,9 @@
       <p class="sub">From the <img class="shadow" src="https://wadaily.co/logo.png" height="18" width="18" style="margin-left: 5px"> WADaily Team</p>
     </div>
   </header>
+  <% if (valid) { %>
+    <div class="rainbow">This pass is valid</div>
+  <% } %>
   <main>
     <div>
       <% if (valid) { %>
@@ -27,11 +30,5 @@
       <% } %> 
     </div>
   </main>
-  <div class="bottom">
-    <p>This screen serves as your late pass, show it to your teacher</p>
-    <% if (valid) { %>
-      <div class="rainbow">This pass is valid</div>
-    <% } %>
-  </div>
 </body>
 </html>

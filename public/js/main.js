@@ -24,7 +24,7 @@ const interval = setInterval(() => {
 
 function makeQR(code) {
     const qr = qrcode(4, 'M');
-    qr.addData(`https://${window.location.host}/?code=${code}`);
+    qr.addData(`${window.location.protocol}//${window.location.host}/?code=${code}`);
     qr.make();
     qrHolder.innerHTML = qr.createImgTag();
 }
