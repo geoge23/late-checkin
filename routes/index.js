@@ -3,7 +3,7 @@ var router = express.Router();
 const crypto = require('crypto');
 const { TOTP } = require('otpauth');
 const SECRET = process.env.SECRET
-const WINDOW = process.env.WINDOW || 1
+const WINDOW = parseInt(process.env.WINDOW) || 1
 
 const totp = new TOTP({
   algorithm: 'SHA1',
