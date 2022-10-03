@@ -81,7 +81,8 @@ function hmacSha1(data) {
 
 //generates date string formats for use in the server-side render
 function generateDateStrings(date = new Date()) {
-  const hrs = date.getHours()
+  let hrs = date.getHours()
+  if (hrs == 0) hrs = 12;
   const mins = date.getMinutes()
   //adds padding to the minutes (i.e. 1 hrs 2 mins to 1:02 instead of 1:2)
   const minString = mins.toString().padStart(2, '0')
