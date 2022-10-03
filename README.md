@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/60108810/193490184-9ec7fb1d-3cda-4252-a04e-5e6d70ba7fa1.png" height="100">
+
 # late-checkin
 Commissioned project to generate un-tamperable digital late passes for use at Woodward Academy
 
